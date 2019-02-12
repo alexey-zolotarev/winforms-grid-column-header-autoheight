@@ -1,17 +1,8 @@
 Imports Microsoft.VisualBasic
-Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Data
-Imports System.Drawing
-Imports System.Text
-Imports System.Windows.Forms
 Imports DevExpress.XtraEditors
-Imports DevExpress.XtraGrid.Views.Grid
-Imports DevExpress.Utils.Drawing
-Imports DevExpress.XtraGrid.Columns
-Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
-Imports DevExpress.XtraGrid.Drawing
+Imports System
+Imports System.Data
+Imports System.Windows.Forms
 
 
 Namespace DXSample
@@ -21,9 +12,15 @@ Namespace DXSample
 			InitializeComponent()
 		End Sub
 		Public Sub InitData()
+			Dim dt = New DataTable()
+			dt.Columns.Add("CustomerID", GetType(Int32))
+			dt.Columns.Add("FirstName", GetType(String))
+			dt.Columns.Add("LastName", GetType(String))
+			dt.Columns.Add("Age", GetType(Int32))
 			For i As Integer = 0 To 4
-				dataSet11.Tables(0).Rows.Add(New Object() { i, String.Format("FirstName {0}", i), String.Format("LastName {0}", i), 20 + i })
+				dt.Rows.Add(New Object() { i, String.Format("FirstName {0}", i), String.Format("LastName {0}", i), 20 + i })
 			Next i
+			gridControl1.DataSource = dt
 		End Sub
 		Private helper As AutoHeightHelper
 		Private Sub OnFormLoad(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
@@ -32,8 +29,7 @@ Namespace DXSample
 			helper = New AutoHeightHelper(gridView1)
 			helper.EnableColumnPanelAutoHeight()
 		End Sub
-
-		Private Overloads Sub OnFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
+		Private Sub OnFormClosing(ByVal sender As Object, ByVal e As FormClosingEventArgs) Handles MyBase.FormClosing
 			helper.DisableColumnPanelAutoHeight()
 		End Sub
 	End Class

@@ -26,8 +26,6 @@ Namespace DXSample
 		''' </summary>
 		Private Sub InitializeComponent()
 			Me.components = New System.ComponentModel.Container()
-			Me.customerInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.dataSet11 = New DXSample.DataSet1()
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
 			Me.colCustomerID = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -36,26 +34,13 @@ Namespace DXSample
 			Me.colAge = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.repositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
 			Me.defaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
-			CType(Me.customerInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.dataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
-			' customerInfoBindingSource
-			' 
-			Me.customerInfoBindingSource.DataMember = "CustomerInfo"
-			Me.customerInfoBindingSource.DataSource = Me.dataSet11
-			' 
-			' dataSet11
-			' 
-			Me.dataSet11.DataSetName = "DataSet1"
-			Me.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-			' 
 			' gridControl1
 			' 
-			Me.gridControl1.DataSource = Me.customerInfoBindingSource
 			Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.gridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.gridControl1.MainView = Me.gridView1
@@ -129,10 +114,8 @@ Namespace DXSample
 			Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 			Me.Name = "Form1"
 			Me.Text = "ColumnPanel Auto Height"
-'			Me.Load += New System.EventHandler(Me.OnFormLoad);
 '			Me.FormClosing += New System.Windows.Forms.FormClosingEventHandler(Me.OnFormClosing);
-			CType(Me.customerInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.dataSet11, System.ComponentModel.ISupportInitialize).EndInit()
+'			Me.Load += New System.EventHandler(Me.OnFormLoad);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -141,10 +124,6 @@ Namespace DXSample
 		End Sub
 
 		#End Region
-
-
-		Private customerInfoBindingSource As System.Windows.Forms.BindingSource
-		Private dataSet11 As DataSet1
 		Private gridControl1 As DevExpress.XtraGrid.GridControl
 		Private gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 		Private repositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
