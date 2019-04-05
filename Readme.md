@@ -2,6 +2,7 @@
 *Files to look at*:
 
 * [AutoHeightHelper.cs](./CS/WindowsApplication3/AutoHeightHelper.cs) (VB: [AutoHeightHelper.vb](./VB/WindowsApplication3/AutoHeightHelper.vb))
+* [DataSet1.cs](./CS/WindowsApplication3/DataSet1.cs) (VB: [DataSet1.vb](./VB/WindowsApplication3/DataSet1.vb))
 * [Form1.cs](./CS/WindowsApplication3/Form1.cs) (VB: [Form1.vb](./VB/WindowsApplication3/Form1.vb))
 * [Program.cs](./CS/WindowsApplication3/Program.cs) (VB: [Program.vb](./VB/WindowsApplication3/Program.vb))
 <!-- default file list end -->
